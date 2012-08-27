@@ -1,0 +1,52 @@
+%html{:lang => "cs", "xml:lang" => "cs", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %meta{:content => "cs", "http-equiv" => "content-language"}/
+    %meta{:content => "all,follow", :name => "robots"}/
+    %title Blog
+    %link{:href => "./", :rel => "index", :title => "Home"}/
+    = stylesheet_link_tag "main.css"
+  %body
+    / Main
+    #main.box
+      / Header
+      =render partial: "layouts/header"
+      / /header
+      / Main menu (tabs)
+      =render partial: "layouts/navigation"
+      / Page (2 columns)
+      #page.box
+        #page-in.box
+          #strip.box.noprint
+            / RSS feeds
+            %p#rss
+              %strong RSS:
+              %a{:href => "#"} articles
+              \/
+              %a{:href => "#"} comments
+            %hr.noscreen/
+            / Breadcrumbs
+            %p#breadcrumbs
+              You are here:
+              %a{:href => "#"} Home
+              \&gt;
+              %a{:href => "#"} Category
+              \&gt;
+              %strong Page
+            %hr.noscreen/
+          / /strip
+          / Content
+          #content
+            / Article
+            =yield
+            %hr.noscreen/
+          / /content
+          / Right column
+          =render partial: 'layouts/right_col'
+          / /col
+        / /page-in
+      / /page
+      / Footer
+      =render partial: "layouts/footer"
+      / /footer
+    / /main

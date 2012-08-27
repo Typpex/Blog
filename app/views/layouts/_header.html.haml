@@ -1,0 +1,31 @@
+#header
+  / Logotyp
+  %h1#logo
+    %a{:href => "./", :title => "CrystalX [Go to homepage]"}
+      Yet Another Blog
+      %span
+  %hr.noscreen/
+  / Quick links
+  .noscreen.noprint
+    %p
+      %em
+        Quick links:
+        = succeed "," do
+          %a{:href => "#content"} content
+        = succeed "," do
+          %a{:href => "#tabs"} navigation
+        = succeed "." do
+          %a{:href => "#search"} search
+    %hr/
+  / Search
+  #search.noprint
+    %form{:action => "", :method => "get"}
+      %fieldset
+        %legend Search
+        %label
+          %span.noscreen Find:
+          %span#search-input-out
+            %input#search-input{:name => "", :size => "30", :type => "text"}/
+        %input#search-submit{:src => "design/search_submit.gif", :type => "image", :value => "OK"}/
+        / /search
+      

@@ -1,0 +1,34 @@
+-@articles.each do |article|
+  .article
+    %h2
+      %span
+        %a{:href => "#"}
+          =article.title
+    %p.info.noprint
+      %span.date 2007-01-01 @ 00:01
+      %span.noscreen ,
+      %span.cat
+        %a{:href => "#"} Category
+      %span.noscreen ,
+      %span.user
+        %a{:href => "#"} My name
+      %span.noscreen ,
+      %span.comments
+        %a{:href => "#"} Comments
+    %p
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam pellentesque enim blandit enim bibendum blandit.
+      
+      Integer eu leo ac est aliquet imperdiet. Quisque nec justo id augue posuere malesuada. Nullam ac metus. Cras non leo
+      
+      ut est placerat condimentum. Aliquam ut enim. Quisque non sapien in enim eleifend faucibus. Pellentesque sodales. Mauris
+      
+      auctor arcu sit amet felis. Donec eget enim ut lacus pharetra condimentum. Nulla in felis vel tortor imperdiet consectetuer.
+      
+      Sed id ante.
+    %p.btn-more.box.noprint
+      %strong
+        %a{:href => "#"} Continue
+%p        
+  = paginate @articles
+
+  / /article
